@@ -15,7 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BASE_PATH: /universe-site-web
+  NEXT_PUBLIC_BASE_PATH: /universe-site-web
+  NEXT_PUBLIC_URL_APPS: http://localhost:8082/universe-apps-web/
 
 jobs:
   build:

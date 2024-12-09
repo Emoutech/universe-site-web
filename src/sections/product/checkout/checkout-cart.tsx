@@ -1,21 +1,21 @@
-import sum from 'lodash/sum';
+import sum from "lodash/sum";
 // @mui
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Unstable_Grid2';
-import CardHeader from '@mui/material/CardHeader';
-import Typography from '@mui/material/Typography';
+import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import CardHeader from "@mui/material/CardHeader";
+import Typography from "@mui/material/Typography";
 // routes
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 // types
-import { IProductCheckoutState } from 'src/types/product';
+import { IProductCheckoutState } from "src/types/product";
 // components
-import Iconify from 'src/components/iconify';
-import { RouterLink } from 'src/routes/components';
-import EmptyContent from 'src/components/empty-content';
+import Iconify from "src/components/iconify";
+import { RouterLink } from "src/routes/components";
+import EmptyContent from "src/components/empty-content";
 //
-import CheckoutSummary from './checkout-summary';
-import CheckoutCartProductList from './checkout-cart-product-list';
+import CheckoutSummary from "./checkout-summary";
+import CheckoutCartProductList from "./checkout-cart-product-list";
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ export default function CheckoutCart({
             title={
               <Typography variant="h6">
                 Cart
-                <Typography component="span" sx={{ color: 'text.secondary' }}>
+                <Typography component="span" sx={{ color: "text.secondary" }}>
                   &nbsp;({totalItems} item)
                 </Typography>
               </Typography>

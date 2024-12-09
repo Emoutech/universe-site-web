@@ -38,6 +38,7 @@ import SnackbarProvider from "src/components/snackbar/snackbar-provider";
 import { SettingsProvider, SettingsDrawer } from "src/components/settings";
 // auth
 import { AuthProvider, AuthConsumer } from "src/auth/context/jwt";
+import { ASSETS_API } from "src/config-global";
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/auth0';
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/amplify';
 // import { AuthProvider, AuthConsumer } from 'src/auth/context/firebase';
@@ -50,28 +51,28 @@ export const metadata = {
     "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style",
   keywords: "react,material,kit,application,demo,admin,template",
   themeColor: "#000000",
-  manifest: "/manifest.json",
+  manifest: `${ASSETS_API}/manifest.json`,
   icons: [
     {
       rel: "icon",
-      url: "/favicon/favicon.ico",
+      url: `${ASSETS_API}/favicon/favicon.ico`,
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "/favicon/favicon-16x16.png",
+      url: `${ASSETS_API}/favicon/favicon-16x16.png`,
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "/favicon/favicon-32x32.png",
+      url: `${ASSETS_API}/favicon/favicon-32x32.png`,
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: "/favicon/apple-touch-icon.png",
+      url: `${ASSETS_API}/favicon/apple-touch-icon.png`,
     },
   ],
 };

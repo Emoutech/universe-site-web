@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 // @mui
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Grid";
 // routes
 import { paths } from "src/routes/paths";
 // _mock

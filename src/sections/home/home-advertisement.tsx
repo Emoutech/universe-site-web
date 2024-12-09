@@ -1,17 +1,18 @@
-import { m } from 'framer-motion';
+import { m } from "framer-motion";
 // @mui
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 // theme
-import { bgGradient } from 'src/theme/css';
+import { bgGradient } from "src/theme/css";
 // routes
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 // components
-import Iconify from 'src/components/iconify';
-import { MotionViewport, varFade } from 'src/components/animate';
+import Iconify from "src/components/iconify";
+import { MotionViewport, varFade } from "src/components/animate";
+import { ASSETS_API } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -22,23 +23,23 @@ export default function HomeAdvertisement() {
     <Box
       sx={{
         textAlign: {
-          xs: 'center',
-          md: 'left',
+          xs: "center",
+          md: "left",
         },
       }}
     >
       <Box
         component={m.div}
         variants={varFade().inDown}
-        sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
+        sx={{ color: "common.white", mb: 5, typography: "h2" }}
       >
         Get started with
         <br /> Minimal kit today
       </Box>
 
       <Stack
-        direction={{ xs: 'column', md: 'row' }}
-        justifyContent={{ xs: 'center', md: 'flex-start' }}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={{ xs: "center", md: "flex-start" }}
         spacing={2}
       >
         <m.div variants={varFade().inRight}>
@@ -50,8 +51,8 @@ export default function HomeAdvertisement() {
             rel="noopener"
             href={paths.minimalUI}
             sx={{
-              color: 'grey.800',
-              bgcolor: 'common.white',
+              color: "grey.800",
+              bgcolor: "common.white",
             }}
           >
             Purchase Now
@@ -66,8 +67,17 @@ export default function HomeAdvertisement() {
             target="_blank"
             rel="noopener"
             href={paths.freeUI}
-            endIcon={<Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />}
-            sx={{ color: 'common.white', '&:hover': { borderColor: 'currentColor' } }}
+            endIcon={
+              <Iconify
+                icon="eva:external-link-fill"
+                width={16}
+                sx={{ mr: 0.5 }}
+              />
+            }
+            sx={{
+              color: "common.white",
+              "&:hover": { borderColor: "currentColor" },
+            }}
           >
             Get Free Version
           </Button>
@@ -85,7 +95,7 @@ export default function HomeAdvertisement() {
         }}
         transition={{ duration: 4, repeat: Infinity }}
         alt="rocket"
-        src="/assets/images/home/rocket.webp"
+        src={`${ASSETS_API}/assets/images/home/rocket.webp`}
         sx={{ maxWidth: 460 }}
       />
     </Stack>
@@ -95,10 +105,10 @@ export default function HomeAdvertisement() {
     <Container component={MotionViewport}>
       <Stack
         alignItems="center"
-        direction={{ xs: 'column', md: 'row' }}
+        direction={{ xs: "column", md: "row" }}
         sx={{
           ...bgGradient({
-            direction: '135deg',
+            direction: "135deg",
             startColor: theme.palette.primary.main,
             endColor: theme.palette.primary.dark,
           }),

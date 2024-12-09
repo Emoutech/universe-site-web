@@ -2,8 +2,8 @@ module.exports = {
   trailingSlash: true,
   output: "export",
   distDir: "dist",
-  basePath: process.env.BASE_PATH || "",
-  assetPrefix: process.env.BASE_PATH || "",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   modularizeImports: {
     "@mui/material": {
       transform: "@mui/material/{{member}}",

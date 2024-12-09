@@ -1,29 +1,34 @@
-'use client';
+"use client";
 
 // @mui
-import { useTheme } from '@mui/material/styles';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import { useTheme } from "@mui/material/styles";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 // _mock
-import { _bookings, _bookingNew, _bookingsOverview, _bookingReview } from 'src/_mock';
+import {
+  _bookings,
+  _bookingNew,
+  _bookingsOverview,
+  _bookingReview,
+} from "src/_mock";
 // assets
 import {
   BookingIllustration,
   CheckInIllustration,
   CheckOutIllustration,
-} from 'src/assets/illustrations';
+} from "src/assets/illustrations";
 // components
-import { useSettingsContext } from 'src/components/settings';
+import { useSettingsContext } from "src/components/settings";
 //
-import BookingBooked from '../booking-booked';
-import BookingNewest from '../booking-newest';
-import BookingDetails from '../booking-details';
-import BookingAvailable from '../booking-available';
-import BookingStatistics from '../booking-statistics';
-import BookingTotalIncomes from '../booking-total-incomes';
-import BookingWidgetSummary from '../booking-widget-summary';
-import BookingCheckInWidgets from '../booking-check-in-widgets';
-import BookingCustomerReviews from '../booking-customer-reviews';
+import BookingBooked from "../booking-booked";
+import BookingNewest from "../booking-newest";
+import BookingDetails from "../booking-details";
+import BookingAvailable from "../booking-available";
+import BookingStatistics from "../booking-statistics";
+import BookingTotalIncomes from "../booking-total-incomes";
+import BookingWidgetSummary from "../booking-widget-summary";
+import BookingCheckInWidgets from "../booking-check-in-widgets";
+import BookingCustomerReviews from "../booking-customer-reviews";
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +40,7 @@ export default function OverviewBookingView() {
   const settings = useSettingsContext();
 
   return (
-    <Container maxWidth={settings.themeStretch ? false : 'xl'}>
+    <Container maxWidth={settings.themeStretch ? false : "xl"}>
       <Grid container spacing={SPACING} disableEqualOverflow>
         <Grid xs={12} md={4}>
           <BookingWidgetSummary
@@ -46,11 +51,19 @@ export default function OverviewBookingView() {
         </Grid>
 
         <Grid xs={12} md={4}>
-          <BookingWidgetSummary title="Sold" total={311000} icon={<CheckInIllustration />} />
+          <BookingWidgetSummary
+            title="Sold"
+            total={311000}
+            icon={<CheckInIllustration />}
+          />
         </Grid>
 
         <Grid xs={12} md={4}>
-          <BookingWidgetSummary title="Canceled" total={124000} icon={<CheckOutIllustration />} />
+          <BookingWidgetSummary
+            title="Canceled"
+            total={124000}
+            icon={<CheckOutIllustration />}
+          />
         </Grid>
 
         <Grid container xs={12}>
@@ -83,8 +96,8 @@ export default function OverviewBookingView() {
               <BookingCheckInWidgets
                 chart={{
                   series: [
-                    { label: 'Sold', percent: 72, total: 38566 },
-                    { label: 'Pending for payment', percent: 64, total: 18472 },
+                    { label: "Sold", percent: 72, total: 38566 },
+                    { label: "Pending for payment", percent: 64, total: 18472 },
                   ],
                 }}
               />
@@ -95,28 +108,59 @@ export default function OverviewBookingView() {
                 title="Statistics"
                 subheader="(+43% Sold | +12% Canceled) than last year"
                 chart={{
-                  colors: [theme.palette.primary.main, theme.palette.error.light],
-                  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                  colors: [
+                    theme.palette.primary.main,
+                    theme.palette.error.light,
+                  ],
+                  categories: [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                  ],
                   series: [
                     {
-                      type: 'Week',
+                      type: "Week",
                       data: [
-                        { name: 'Sold', data: [10, 41, 35, 151, 49, 62, 69, 91, 48] },
-                        { name: 'Canceled', data: [10, 34, 13, 56, 77, 88, 99, 77, 45] },
+                        {
+                          name: "Sold",
+                          data: [10, 41, 35, 151, 49, 62, 69, 91, 48],
+                        },
+                        {
+                          name: "Canceled",
+                          data: [10, 34, 13, 56, 77, 88, 99, 77, 45],
+                        },
                       ],
                     },
                     {
-                      type: 'Month',
+                      type: "Month",
                       data: [
-                        { name: 'Sold', data: [148, 91, 69, 62, 49, 51, 35, 41, 10] },
-                        { name: 'Canceled', data: [45, 77, 99, 88, 77, 56, 13, 34, 10] },
+                        {
+                          name: "Sold",
+                          data: [148, 91, 69, 62, 49, 51, 35, 41, 10],
+                        },
+                        {
+                          name: "Canceled",
+                          data: [45, 77, 99, 88, 77, 56, 13, 34, 10],
+                        },
                       ],
                     },
                     {
-                      type: 'Year',
+                      type: "Year",
                       data: [
-                        { name: 'Sold', data: [76, 42, 29, 41, 27, 138, 117, 86, 63] },
-                        { name: 'Canceled', data: [80, 55, 34, 114, 80, 130, 15, 28, 55] },
+                        {
+                          name: "Sold",
+                          data: [76, 42, 29, 41, 27, 138, 117, 86, 63],
+                        },
+                        {
+                          name: "Canceled",
+                          data: [80, 55, 34, 114, 80, 130, 15, 28, 55],
+                        },
                       ],
                     },
                   ],
@@ -130,8 +174,8 @@ export default function OverviewBookingView() {
               title="Tours Available"
               chart={{
                 series: [
-                  { label: 'Sold out', value: 120 },
-                  { label: 'Available', value: 66 },
+                  { label: "Sold out", value: 120 },
+                  { label: "Available", value: 66 },
                 ],
               }}
             />
@@ -146,7 +190,11 @@ export default function OverviewBookingView() {
         </Grid>
 
         <Grid xs={12}>
-          <BookingNewest title="Newest Booking" subheader="12 Booking" list={_bookingNew} />
+          <BookingNewest
+            title="Newest Booking"
+            subheader="12 Booking"
+            list={_bookingNew}
+          />
         </Grid>
 
         <Grid xs={12}>
@@ -154,12 +202,12 @@ export default function OverviewBookingView() {
             title="Booking Details"
             tableData={_bookings}
             tableLabels={[
-              { id: 'destination', label: 'Destination' },
-              { id: 'customer', label: 'Customer' },
-              { id: 'checkIn', label: 'Check In' },
-              { id: 'checkOut', label: 'Check Out' },
-              { id: 'status', label: 'Status' },
-              { id: '' },
+              { id: "destination", label: "Destination" },
+              { id: "customer", label: "Customer" },
+              { id: "checkIn", label: "Check In" },
+              { id: "checkOut", label: "Check Out" },
+              { id: "status", label: "Status" },
+              { id: "" },
             ]}
           />
         </Grid>
