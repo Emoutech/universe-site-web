@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BASE_PATH: universe-site-web
+  BASE_PATH: /universe-site-web
 
 jobs:
   build:
