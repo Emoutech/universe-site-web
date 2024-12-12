@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import Switch from "@mui/material/Switch";
 import Divider from "@mui/material/Divider";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -179,7 +179,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
   const renderDetails = (
     <>
       {mdUp && (
-        <Grid md={4}>
+        <Grid size={{ md: 4 }}>
           <Typography variant="h6" sx={{ mb: 0.5 }}>
             Details
           </Typography>
@@ -189,7 +189,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
         </Grid>
       )}
 
-      <Grid xs={12} md={8}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Card>
           {!mdUp && <CardHeader title="Details" />}
 
@@ -230,7 +230,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
   const renderProperties = (
     <>
       {mdUp && (
-        <Grid md={4}>
+        <Grid size={{ md: 4 }}>
           <Typography variant="h6" sx={{ mb: 0.5 }}>
             Properties
           </Typography>
@@ -240,7 +240,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
         </Grid>
       )}
 
-      <Grid xs={12} md={8}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Card>
           {!mdUp && <CardHeader title="Properties" />}
 
@@ -365,7 +365,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
   const renderPricing = (
     <>
       {mdUp && (
-        <Grid md={4}>
+        <Grid size={{ md: 4 }}>
           <Typography variant="h6" sx={{ mb: 0.5 }}>
             Pricing
           </Typography>
@@ -375,7 +375,7 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
         </Grid>
       )}
 
-      <Grid xs={12} md={8}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Card>
           {!mdUp && <CardHeader title="Pricing" />}
 
@@ -450,8 +450,11 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
 
   const renderActions = (
     <>
-      {mdUp && <Grid md={4} />}
-      <Grid xs={12} md={8} sx={{ display: "flex", alignItems: "center" }}>
+      {mdUp && <Grid size={{ md: 4 }} />}
+      <Grid
+        size={{ xs: 12, md: 8 }}
+        sx={{ display: "flex", alignItems: "center" }}
+      >
         <FormControlLabel
           control={<Switch defaultChecked />}
           label="Publish"

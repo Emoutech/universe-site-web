@@ -1,4 +1,4 @@
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 import { _mock } from "./_mock";
 
 // ----------------------------------------------------------------------
@@ -172,9 +172,9 @@ export const _homePlans = [...Array(3)].map((_, index) => ({
     "Commercial applications",
   ],
   icons: [
-    ASSETS_API + "/assets/icons/platforms/ic_figma.svg",
-    ASSETS_API + "/assets/icons/platforms/ic_js.svg",
-    ASSETS_API + "/assets/icons/platforms/ic_ts.svg",
+    BASE_PATH_SITE + "/assets/icons/platforms/ic_figma.svg",
+    BASE_PATH_SITE + "/assets/icons/platforms/ic_js.svg",
+    BASE_PATH_SITE + "/assets/icons/platforms/ic_ts.svg",
   ],
 }));
 

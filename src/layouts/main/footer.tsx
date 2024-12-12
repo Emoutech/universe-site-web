@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 // routes
@@ -97,7 +97,7 @@ export default function Footer() {
             md: "space-between",
           }}
         >
-          <Grid xs={8} md={3}>
+          <Grid size={{ xs: 8, md: 3 }}>
             <Typography
               variant="body2"
               sx={{
@@ -133,7 +133,7 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Stack spacing={5} direction={{ xs: "column", md: "row" }}>
               {LINKS.map((list) => (
                 <Stack

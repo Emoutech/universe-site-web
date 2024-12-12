@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 // @mui
 import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 //
 import Toolbar from "./toolbar";
 import ControlPanel from "../control-panel";
@@ -25,16 +25,16 @@ export default function ScrollView() {
   return (
     <Card sx={{ p: 3 }}>
       <Grid container sx={{ mb: 3 }}>
-        <Grid xs={12} md={9}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <Toolbar onRefresh={() => setCount(count + 1)} />
         </Grid>
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid xs={12} md={9}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <ContainerView key={count} selectVariant={selectVariant} />
         </Grid>
-        <Grid xs={12} md={3}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <ControlPanel
             variantKey={variantKey}
             selectVariant={selectVariant}

@@ -1,42 +1,42 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 // @mui
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
-import Checkbox from '@mui/material/Checkbox';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import AvatarGroup from '@mui/material/AvatarGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import Checkbox from "@mui/material/Checkbox";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import AvatarGroup from "@mui/material/AvatarGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 // routes
-import { paths } from 'src/routes/paths';
-import { useParams } from 'src/routes/hook';
-import { RouterLink } from 'src/routes/components';
+import { paths } from "src/routes/paths";
+import { useParams } from "src/routes/hook";
+import { RouterLink } from "src/routes/components";
 // utils
-import { fShortenNumber } from 'src/utils/format-number';
+import { fShortenNumber } from "src/utils/format-number";
 // components
-import Iconify from 'src/components/iconify';
-import Markdown from 'src/components/markdown';
-import EmptyContent from 'src/components/empty-content';
-import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
+import Iconify from "src/components/iconify";
+import Markdown from "src/components/markdown";
+import EmptyContent from "src/components/empty-content";
+import CustomBreadcrumbs from "src/components/custom-breadcrumbs";
 //
-import { useBlog } from '../hooks';
-import PostList from '../post-list';
-import PostCommentList from '../post-comment-list';
-import PostCommentForm from '../post-comment-form';
-import PostDetailsHero from '../post-details-hero';
-import { PostDetailsSkeleton } from '../post-skeleton';
+import { useBlog } from "../hooks";
+import PostList from "../post-list";
+import PostCommentList from "../post-comment-list";
+import PostCommentForm from "../post-comment-form";
+import PostDetailsHero from "../post-details-hero";
+import { PostDetailsSkeleton } from "../post-skeleton";
 
 // ----------------------------------------------------------------------
 
 export default function PostDetailsHomeView() {
   const params = useParams();
 
-  const { title } = params;
+  const title = params.title as string;
 
   const { post, latestPosts, getPost, getLatestPosts, postStatus } = useBlog();
 
@@ -94,23 +94,23 @@ export default function PostDetailsHomeView() {
         <CustomBreadcrumbs
           links={[
             {
-              name: 'Home',
-              href: '/',
+              name: "Home",
+              href: "/",
             },
             {
-              name: 'Blog',
+              name: "Blog",
               href: paths.post.root,
             },
             {
               name: post?.title,
             },
           ]}
-          sx={{ maxWidth: 720, mx: 'auto' }}
+          sx={{ maxWidth: 720, mx: "auto" }}
         />
       </Container>
 
       <Container maxWidth={false}>
-        <Stack sx={{ maxWidth: 720, mx: 'auto' }}>
+        <Stack sx={{ maxWidth: 720, mx: "auto" }}>
           <Typography variant="subtitle1" sx={{ mb: 5 }}>
             {post.description}
           </Typography>
@@ -148,7 +148,11 @@ export default function PostDetailsHomeView() {
 
               <AvatarGroup>
                 {post.favoritePerson.map((person) => (
-                  <Avatar key={person.name} alt={person.name} src={person.avatarUrl} />
+                  <Avatar
+                    key={person.name}
+                    alt={person.name}
+                    src={person.avatarUrl}
+                  />
                 ))}
               </AvatarGroup>
             </Stack>
@@ -157,7 +161,7 @@ export default function PostDetailsHomeView() {
           <Stack direction="row" sx={{ mb: 3, mt: 5 }}>
             <Typography variant="h4">Comments</Typography>
 
-            <Typography variant="subtitle2" sx={{ color: 'text.disabled' }}>
+            <Typography variant="subtitle2" sx={{ color: "text.disabled" }}>
               ({post.comments.length})
             </Typography>
           </Stack>
@@ -188,9 +192,15 @@ export default function PostDetailsHomeView() {
 
   return (
     <>
-      {postStatus.loading ? renderSkeleton : <>{postStatus.error ? renderError : renderPost}</>}
+      {postStatus.loading ? (
+        renderSkeleton
+      ) : (
+        <>{postStatus.error ? renderError : renderPost}</>
+      )}
 
-      <Container sx={{ pb: 15 }}>{!!latestPosts.length && renderLatestPosts}</Container>
+      <Container sx={{ pb: 15 }}>
+        {!!latestPosts.length && renderLatestPosts}
+      </Container>
     </>
   );
 }

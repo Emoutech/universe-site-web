@@ -4,6 +4,7 @@ import { paths } from "src/routes/paths";
 import { useRouter } from "src/routes/hook";
 //
 import { useAuthContext } from "../hooks";
+import { PATH_AFTER_LOGIN } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +19,7 @@ export default function GuestGuard({ children }: GuestGuardProps) {
 
   const check = useCallback(() => {
     if (authenticated) {
-      router.replace(paths.demo.root);
+      // router.replace(PATH_AFTER_LOGIN);
     }
   }, [authenticated, router]);
 

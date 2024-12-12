@@ -12,7 +12,7 @@ import Image from "src/components/image";
 import Iconify from "src/components/iconify";
 import { useSettingsContext } from "src/components/settings";
 import { MotionViewport, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ export default function HomeColorPresets() {
       <Image
         disabledEffect
         alt="grid"
-        src={`${ASSETS_API}/assets/images/home/presets/grid.webp`}
+        src={`${BASE_PATH_SITE}/assets/images/home/presets/grid.webp`}
       />
 
       <Box sx={{ position: "absolute", top: 0 }}>
@@ -61,7 +61,7 @@ export default function HomeColorPresets() {
           <Image
             disabledEffect
             alt="screen"
-            src={`${ASSETS_API}/assets/images/home/presets/screen_${settings.themeColorPresets}.webp`}
+            src={`${BASE_PATH_SITE}/assets/images/home/presets/screen_${settings.themeColorPresets}.webp`}
           />
         </m.div>
       </Box>
@@ -75,7 +75,7 @@ export default function HomeColorPresets() {
             <Image
               disabledEffect
               alt="sidebar"
-              src={`${ASSETS_API}/assets/images/home/presets/block_${settings.themeColorPresets}.webp`}
+              src={`${BASE_PATH_SITE}/assets/images/home/presets/block_${settings.themeColorPresets}.webp`}
             />
           </m.div>
         </m.div>
@@ -90,7 +90,7 @@ export default function HomeColorPresets() {
             <Image
               disabledEffect
               alt="chart"
-              src={`${ASSETS_API}/assets/images/home/presets/chart_${settings.themeColorPresets}.webp`}
+              src={`${BASE_PATH_SITE}/assets/images/home/presets/chart_${settings.themeColorPresets}.webp`}
             />
           </m.div>
         </m.div>
@@ -105,7 +105,7 @@ export default function HomeColorPresets() {
             <Image
               disabledEffect
               alt="sidebar"
-              src={`${ASSETS_API}/assets/images/home/presets/sidebar_${settings.themeColorPresets}.webp`}
+              src={`${BASE_PATH_SITE}/assets/images/home/presets/sidebar_${settings.themeColorPresets}.webp`}
             />
           </m.div>
         </m.div>

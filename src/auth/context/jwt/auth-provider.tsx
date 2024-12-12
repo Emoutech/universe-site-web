@@ -1,5 +1,6 @@
 "use client";
 
+import Cookie from "js-cookie";
 import { useEffect, useReducer, useCallback, useMemo } from "react";
 // utils
 import axios, { API_ENDPOINTS } from "src/utils/axios";
@@ -87,7 +88,7 @@ export function AuthProvider({ children }: Props) {
 
   const initialize = useCallback(async () => {
     try {
-      const accessToken = sessionStorage.getItem(STORAGE_KEY);
+      const accessToken = Cookie.get(STORAGE_KEY);
 
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
@@ -173,7 +174,7 @@ export function AuthProvider({ children }: Props) {
 
       const { accessToken, user } = response.data;
 
-      sessionStorage.setItem(STORAGE_KEY, accessToken);
+      Cookie.set(STORAGE_KEY, accessToken);
 
       dispatch({
         type: Types.REGISTER,

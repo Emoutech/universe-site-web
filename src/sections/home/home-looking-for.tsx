@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // hooks
 import { useResponsive } from "src/hooks/use-responsive";
 // routes
@@ -13,7 +13,7 @@ import { paths } from "src/routes/paths";
 import Image from "src/components/image";
 import Iconify from "src/components/iconify";
 import { MotionViewport, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -82,22 +82,20 @@ export default function HomeLookingFor() {
         justifyContent="space-between"
         spacing={{ xs: 5, md: 0 }}
       >
-        <Grid xs={12} md={4}>
-          {renderDescription}
-        </Grid>
+        <Grid size={{ xs: 12, md: 4 }}>{renderDescription}</Grid>
 
-        <Grid xs={12} md={7}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <m.div variants={varFade().inUp}>
             <Image
               disabledEffect
               alt="rocket"
-              src={`${ASSETS_API}/assets/images/home/zone_landing.webp`}
+              src={`${BASE_PATH_SITE}/assets/images/home/zone_landing.webp`}
             />
           </m.div>
         </Grid>
 
         {!mdUp && (
-          <Grid xs={12} sx={{ textAlign: "center" }}>
+          <Grid size={{ xs: 12 }} sx={{ textAlign: "center" }}>
             {renderBtn}
           </Grid>
         )}

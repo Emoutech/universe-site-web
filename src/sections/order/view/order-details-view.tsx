@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 // @mui
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // routes
 import { paths } from "src/routes/paths";
 // _mock
@@ -47,7 +47,7 @@ export default function OrderDetailsView() {
       />
 
       <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Stack spacing={3} direction={{ xs: "column-reverse", md: "column" }}>
             <OrderDetailsItems
               items={currentOrder.items}
@@ -62,7 +62,7 @@ export default function OrderDetailsView() {
           </Stack>
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <OrderDetailsInfo
             customer={currentOrder.customer}
             delivery={currentOrder.delivery}

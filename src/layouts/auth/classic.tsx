@@ -16,7 +16,7 @@ import { useResponsive } from "src/hooks/use-responsive";
 import { bgGradient } from "src/theme/css";
 // components
 import Logo from "src/components/logo";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -24,27 +24,27 @@ const METHODS = [
   {
     id: "jwt",
     label: "Jwt",
-    path: paths.auth.jwt.login,
+    path: paths.auth.login,
     icon: "/assets/icons/auth/ic_jwt.svg",
   },
-  {
-    id: "firebase",
-    label: "Firebase",
-    path: paths.auth.firebase.login,
-    icon: "/assets/icons/auth/ic_firebase.svg",
-  },
-  {
-    id: "amplify",
-    label: "Amplify",
-    path: paths.auth.amplify.login,
-    icon: "/assets/icons/auth/ic_amplify.svg",
-  },
-  {
-    id: "auth0",
-    label: "Auth0",
-    path: paths.auth.auth0.login,
-    icon: "/assets/icons/auth/ic_auth0.svg",
-  },
+  // {
+  //   id: "firebase",
+  //   label: "Firebase",
+  //   path: paths.auth.firebase.login,
+  //   icon: "/assets/icons/auth/ic_firebase.svg",
+  // },
+  // {
+  //   id: "amplify",
+  //   label: "Amplify",
+  //   path: paths.auth.amplify.login,
+  //   icon: "/assets/icons/auth/ic_amplify.svg",
+  // },
+  // {
+  //   id: "auth0",
+  //   label: "Auth0",
+  //   path: paths.auth.auth0.login,
+  //   icon: "/assets/icons/auth/ic_auth0.svg",
+  // },
 ];
 
 type Props = {
@@ -109,7 +109,7 @@ export default function AuthClassicLayout({ children, image, title }: Props) {
         alt="auth"
         src={
           image ||
-          `${ASSETS_API}/assets/illustrations/illustration_dashboard.png`
+          `${BASE_PATH_SITE}/assets/illustrations/illustration_dashboard.png`
         }
         sx={{ maxWidth: 720 }}
       />

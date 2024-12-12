@@ -1,8 +1,8 @@
 // @mui
-import Stack from '@mui/material/Stack';
-import Skeleton from '@mui/material/Skeleton';
-import Paper, { PaperProps } from '@mui/material/Paper';
-import Grid, { Grid2Props } from '@mui/material/Unstable_Grid2';
+import Stack from "@mui/material/Stack";
+import Skeleton from "@mui/material/Skeleton";
+import Paper, { PaperProps } from "@mui/material/Paper";
+import Grid from "@mui/material/Grid2";
 
 // ----------------------------------------------------------------------
 
@@ -17,12 +17,16 @@ export function ProductItemSkeleton({ sx, ...other }: PaperProps) {
       {...other}
     >
       <Stack sx={{ p: 1 }}>
-        <Skeleton sx={{ paddingTop: '100%' }} />
+        <Skeleton sx={{ paddingTop: "100%" }} />
       </Stack>
 
       <Stack spacing={2} sx={{ p: 3, pt: 2 }}>
         <Skeleton sx={{ width: 0.5, height: 16 }} />
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Stack direction="row">
             <Skeleton variant="circular" sx={{ width: 16, height: 16 }} />
             <Skeleton variant="circular" sx={{ width: 16, height: 16 }} />
@@ -35,16 +39,14 @@ export function ProductItemSkeleton({ sx, ...other }: PaperProps) {
   );
 }
 
-// ----------------------------------------------------------------------
-
-export function ProductDetailsSkeleton({ ...other }: Grid2Props) {
+export function ProductDetailsSkeleton({ ...other }: any) {
   return (
     <Grid container spacing={8} {...other}>
-      <Grid xs={12} md={6} lg={7}>
-        <Skeleton sx={{ paddingTop: '100%' }} />
+      <Grid size={{ xs: 12, lg: 7, md: 6 }}>
+        <Skeleton sx={{ paddingTop: "100%" }} />
       </Grid>
 
-      <Grid xs={12} md={6} lg={5}>
+      <Grid size={{ xs: 12, lg: 5, md: 6 }}>
         <Stack spacing={3}>
           <Skeleton variant="circular" sx={{ width: 80, height: 80 }} />
           <Skeleton sx={{ height: 240 }} />
@@ -54,7 +56,7 @@ export function ProductDetailsSkeleton({ ...other }: Grid2Props) {
         </Stack>
       </Grid>
 
-      <Grid xs={12}>
+      <Grid size={12}>
         <Stack direction="row" alignItems="center">
           {[...Array(3)].map((_, index) => (
             <Stack

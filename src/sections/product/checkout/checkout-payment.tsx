@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 // @mui
 import LoadingButton from "@mui/lab/LoadingButton";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // types
 import {
   ICheckoutCardOption,
@@ -122,7 +122,7 @@ export default function CheckoutPayment({
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <CheckoutDelivery
             onApplyShipping={onApplyShipping}
             options={DELIVERY_OPTIONS}
@@ -144,7 +144,7 @@ export default function CheckoutPayment({
           </Button>
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <CheckoutBillingInfo onBackStep={onBackStep} billing={billing} />
 
           <CheckoutSummary

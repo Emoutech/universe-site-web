@@ -4,15 +4,7 @@ import { paths } from "src/routes/paths";
 import { useRouter } from "src/routes/hook";
 //
 import { useAuthContext } from "../hooks";
-
-// ----------------------------------------------------------------------
-
-const loginPaths: Record<string, string> = {
-  jwt: paths.auth.jwt.login,
-  auth0: paths.auth.auth0.login,
-  amplify: paths.auth.amplify.login,
-  firebase: paths.auth.firebase.login,
-};
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -28,15 +20,13 @@ export default function AuthGuard({ children }: AuthGuardProps) {
   const [checked, setChecked] = useState(false);
 
   const check = useCallback(() => {
+    debugger;
     if (!authenticated) {
       const searchParams = new URLSearchParams({
         returnTo: window.location.href,
       }).toString();
 
-      const loginPath = loginPaths[method];
-
-      const href = `${loginPath}?${searchParams}`;
-
+      const href = `${BASE_PATH_SITE}/login?${searchParams}`;
       router.replace(href);
     } else {
       setChecked(true);

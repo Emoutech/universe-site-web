@@ -9,7 +9,7 @@ import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // routes
 import { paths } from "src/routes/paths";
 // hooks
@@ -24,7 +24,7 @@ import Iconify from "src/components/iconify";
 import SvgColor from "src/components/svg-color";
 import { RouterLink } from "src/routes/components";
 import { MotionContainer, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ const StyledRoot = styled("div")(({ theme }) => ({
       theme.palette.background.default,
       theme.palette.mode === "light" ? 0.9 : 0.94
     ),
-    imgUrl: `${ASSETS_API}/assets/background/overlay_3.jpg`,
+    imgUrl: `${BASE_PATH_SITE}/assets/background/overlay_3.jpg`,
   }),
   width: "100%",
   height: "100vh",
@@ -295,7 +295,7 @@ export default function HomeHero() {
           {["figma", "js", "ts", "nextjs"].map((platform) => (
             <m.div key={platform} variants={varFade().in}>
               <SvgColor
-                src={`${ASSETS_API}/assets/icons/platforms/ic_${platform}.svg`}
+                src={`${BASE_PATH_SITE}/assets/icons/platforms/ic_${platform}.svg`}
               />
             </m.div>
           ))}
@@ -330,8 +330,8 @@ export default function HomeHero() {
           alt={isLight ? "light_1" : "dark_1"}
           src={
             isLight
-              ? `${ASSETS_API}/assets/images/home/hero/light_1.webp`
-              : `${ASSETS_API}/assets/images/home/hero/dark_1.webp`
+              ? `${BASE_PATH_SITE}/assets/images/home/hero/light_1.webp`
+              : `${BASE_PATH_SITE}/assets/images/home/hero/dark_1.webp`
           }
           sx={{ position: "absolute", mt: -5 }}
         />
@@ -342,8 +342,8 @@ export default function HomeHero() {
           alt={isLight ? "light_1" : "dark_1"}
           src={
             isLight
-              ? `${ASSETS_API}/assets/images/home/hero/light_1.webp`
-              : `${ASSETS_API}/assets/images/home/hero/dark_1.webp`
+              ? `${BASE_PATH_SITE}/assets/images/home/hero/light_1.webp`
+              : `${BASE_PATH_SITE}/assets/images/home/hero/dark_1.webp`
           }
           sx={{ position: "absolute" }}
         />
@@ -361,8 +361,8 @@ export default function HomeHero() {
           alt={isLight ? "light_2" : "dark_2"}
           src={
             isLight
-              ? `${ASSETS_API}/assets/images/home/hero/light_2.webp`
-              : `${ASSETS_API}/assets/images/home/hero/dark_2.webp`
+              ? `${BASE_PATH_SITE}/assets/images/home/hero/light_2.webp`
+              : `${BASE_PATH_SITE}/assets/images/home/hero/dark_2.webp`
           }
           sx={{ position: "absolute", mt: -5 }}
         />
@@ -373,8 +373,8 @@ export default function HomeHero() {
           alt={isLight ? "light_2" : "dark_2"}
           src={
             isLight
-              ? `${ASSETS_API}/assets/images/home/hero/light_2.webp`
-              : `${ASSETS_API}/assets/images/home/hero/dark_2.webp`
+              ? `${BASE_PATH_SITE}/assets/images/home/hero/light_2.webp`
+              : `${BASE_PATH_SITE}/assets/images/home/hero/dark_2.webp`
           }
           sx={{ position: "absolute" }}
         />
@@ -415,11 +415,9 @@ export default function HomeHero() {
         <StyledWrapper>
           <Container component={MotionContainer} sx={{ height: 1 }}>
             <Grid container columnSpacing={{ md: 10 }} sx={{ height: 1 }}>
-              <Grid xs={12} md={6}>
-                {renderDescription}
-              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>{renderDescription}</Grid>
 
-              {mdUp && <Grid md={6}>{renderSlides}</Grid>}
+              {mdUp && <Grid size={{ md: 6 }}>{renderSlides}</Grid>}
             </Grid>
           </Container>
 

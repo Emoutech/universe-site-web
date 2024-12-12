@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import ListItemText from "@mui/material/ListItemText";
 // utils
@@ -136,11 +136,9 @@ export default function JobDetailsContent({ job }: Props) {
 
   return (
     <Grid container spacing={3}>
-      <Grid xs={12} md={8}>
-        {renderContent}
-      </Grid>
+      <Grid size={{ xs: 12, md: 8 }}>{renderContent}</Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid size={{ xs: 12, md: 4 }}>
         {renderOverview}
 
         {renderCompany}

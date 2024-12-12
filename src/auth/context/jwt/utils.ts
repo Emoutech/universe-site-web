@@ -1,4 +1,5 @@
-// routes
+import Cookie from "js-cookie";
+
 import { paths } from "src/routes/paths";
 // utils
 import axios from "src/utils/axios";
@@ -34,6 +35,7 @@ export const isValidToken = (accessToken: string) => {
 };
 
 // ----------------------------------------------------------------------
+const STORAGE_KEY = "accessToken";
 
 export const tokenExpired = (exp: number) => {
   // eslint-disable-next-line prefer-const
@@ -49,18 +51,18 @@ export const tokenExpired = (exp: number) => {
 
   expiredTimer = setTimeout(() => {
     alert("Seu token expirou. Realizei um novo login." + timeLeft);
-
-    sessionStorage.removeItem("accessToken");
-
-    window.location.href = paths.auth.jwt.login;
+    Cookie.remove(STORAGE_KEY);
+    window.location.href = paths.auth.login;
   }, timeLeft);
 };
 
-// ----------------------------------------------------------------------
-
 export const setSession = (accessToken: string | null) => {
   if (accessToken) {
-    sessionStorage.setItem("accessToken", accessToken);
+    Cookie.set(STORAGE_KEY, accessToken, {
+      secure: true, // Use HTTPS para maior segurança
+      sameSite: "Strict", // Evita vazamento do cookie para outros domínios
+      expires: 7, // Expira em 7 dias
+    });
 
     axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 

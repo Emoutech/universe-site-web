@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 //
 import { HeaderSimple as Header } from "../_common";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ export default function AuthModernCompactLayout({ children }: Props) {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
-            backgroundImage: `url(${ASSETS_API}/assets/background/overlay_4.jpg)`,
+            backgroundImage: `url(${BASE_PATH_SITE}/assets/background/overlay_4.jpg)`,
           },
         }}
       >

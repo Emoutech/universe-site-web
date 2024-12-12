@@ -9,7 +9,7 @@ import Tabs from "@mui/material/Tabs";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 // redux
 import { useDispatch } from "src/redux/store";
@@ -60,7 +60,7 @@ function useInitial() {
 
   const params = useParams();
 
-  const { id } = params;
+  const id = params.id as string;
 
   const getProductCallback = useCallback(() => {
     if (id) {
@@ -136,11 +136,11 @@ export default function ProductDetailsView() {
       />
 
       <Grid container spacing={{ xs: 3, md: 5, lg: 8 }}>
-        <Grid xs={12} md={6} lg={7}>
+        <Grid size={{ xs: 12, lg: 7, md: 6 }}>
           <ProductDetailsCarousel product={product} />
         </Grid>
 
-        <Grid xs={12} md={6} lg={5}>
+        <Grid size={{ xs: 12, lg: 5, md: 6 }}>
           <ProductDetailsSummary
             disabledActions
             product={product}

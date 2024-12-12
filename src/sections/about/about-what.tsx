@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import LinearProgress from "@mui/material/LinearProgress";
 // hooks
@@ -16,7 +16,7 @@ import { fPercent } from "src/utils/format-number";
 import Image from "src/components/image";
 import Iconify from "src/components/iconify";
 import { MotionViewport, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -51,28 +51,26 @@ export default function AboutWhat() {
         {mdUp && (
           <Grid
             container
-            xs={12}
-            md={6}
-            lg={7}
+            size={{ xs: 12, md: 6, lg: 7 }}
             alignItems="center"
             sx={{ pr: { md: 7 } }}
           >
-            <Grid xs={6}>
+            <Grid size={6}>
               <m.div variants={varFade().inUp}>
                 <Image
                   alt="our office 2"
-                  src={`${ASSETS_API}/assets/images/about/what_2.png`}
+                  src={`${BASE_PATH_SITE}/assets/images/about/what_2.png`}
                   ratio="1/1"
                   sx={{ borderRadius: 3, boxShadow: shadow }}
                 />
               </m.div>
             </Grid>
 
-            <Grid xs={6}>
+            <Grid size={6}>
               <m.div variants={varFade().inUp}>
                 <Image
                   alt="our office 1"
-                  src={`${ASSETS_API}/assets/images/about/what_1.png`}
+                  src={`${BASE_PATH_SITE}/assets/images/about/what_1.png`}
                   ratio="3/4"
                   sx={{ borderRadius: 3, boxShadow: shadow }}
                 />
@@ -81,7 +79,7 @@ export default function AboutWhat() {
           </Grid>
         )}
 
-        <Grid xs={12} md={6} lg={5}>
+        <Grid size={{ xs: 12, md: 6, lg: 5 }}>
           <m.div variants={varFade().inRight}>
             <Typography variant="h2" sx={{ mb: 3 }}>
               What is Minimal?

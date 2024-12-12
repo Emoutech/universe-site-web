@@ -1,8 +1,6 @@
-import { memo } from 'react';
+import { memo } from "react";
 // @mui
-import Box, { BoxProps } from '@mui/material/Box';
-
-// ----------------------------------------------------------------------
+import Box, { BoxProps } from "@mui/material/Box";
 
 function AvatarShape({ sx, ...other }: BoxProps) {
   return (
@@ -14,7 +12,7 @@ function AvatarShape({ sx, ...other }: BoxProps) {
       viewBox="0 0 144 62"
       xmlns="http://www.w3.org/2000/svg"
       sx={{
-        color: 'background.paper',
+        color: "background.paper",
         ...sx,
       }}
       {...other}

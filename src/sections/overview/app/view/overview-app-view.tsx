@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // hooks
 import { useAuthContext } from "src/auth/hooks";
 // _mock
@@ -44,7 +44,7 @@ export default function OverviewAppView() {
   return (
     <Container maxWidth={settings.themeStretch ? false : "xl"}>
       <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <AppWelcome
             title={`Welcome back 👋 \n ${user?.displayName}`}
             description="If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything."
@@ -57,11 +57,11 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <AppFeatured list={_appFeatured} />
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <AppWidgetSummary
             title="Total Active Users"
             percent={2.6}
@@ -72,7 +72,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <AppWidgetSummary
             title="Total Installed"
             percent={0.2}
@@ -84,7 +84,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <AppWidgetSummary
             title="Total Downloads"
             percent={-0.1}
@@ -96,7 +96,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, lg: 4, md: 6 }}>
           <AppCurrentDownload
             title="Current Download"
             chart={{
@@ -110,7 +110,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={8}>
+        <Grid size={{ xs: 12, lg: 8, md: 6 }}>
           <AppAreaInstalled
             title="Area Installed"
             subheader="(+43%) than last year"
@@ -161,7 +161,7 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} lg={8}>
+        <Grid size={{ xs: 12, lg: 8 }}>
           <AppNewInvoice
             title="New Invoice"
             tableData={_appInvoices}
@@ -175,22 +175,22 @@ export default function OverviewAppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, lg: 4, md: 6 }}>
           <AppTopRelated title="Top Related Applications" list={_appRelated} />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, lg: 4, md: 6 }}>
           <AppTopInstalledCountries
             title="Top Installed Countries"
             list={_appInstalled}
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, lg: 4, md: 6 }}>
           <AppTopAuthors title="Top Authors" list={_appAuthors} />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, lg: 4, md: 6 }}>
           <Stack spacing={3}>
             <AppWidget
               title="Conversion"

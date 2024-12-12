@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Image from "src/components/image";
 import Iconify from "src/components/iconify";
 import { MotionViewport, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ export default function AboutVision() {
 
   const renderImg = (
     <Image
-      src={`${ASSETS_API}/assets/images/about/vision.jpg`}
+      src={`${BASE_PATH_SITE}/assets/images/about/vision.jpg`}
       alt="about-vision"
       overlay={alpha(theme.palette.grey[900], 0.48)}
     />
@@ -46,7 +46,7 @@ export default function AboutVision() {
           key={logo}
           variants={varFade().in}
           alt={logo}
-          src={`${ASSETS_API}/assets/icons/brands/ic_brand_${logo}.svg`}
+          src={`${BASE_PATH_SITE}/assets/icons/brands/ic_brand_${logo}.svg`}
           sx={{
             m: { xs: 1.5, md: 2.5 },
             height: { xs: 20, md: 32 },

@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // routes
 import { paths } from "src/routes/paths";
 // components
@@ -80,7 +80,7 @@ export default function GridView() {
 
               <Grid container spacing={spacing}>
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((value) => (
-                  <Grid key={value} xs={1}>
+                  <Grid key={value} size={1}>
                     <Paper
                       sx={{
                         height: 80,
@@ -118,7 +118,7 @@ export default function GridView() {
             <StyledBlockContainer variant="outlined">
               <Grid container spacing={3}>
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((value) => (
-                  <Grid key={value} xs={column}>
+                  <Grid key={value} size={column}>
                     <Paper
                       sx={{
                         py: 3,

@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 //
 import { getRatio } from "./utils";
 import { ImageProps } from "./types";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -71,8 +71,8 @@ const Image = forwardRef<HTMLSpanElement, ImageProps>(
         wrapperClassName={wrapperClassName || "component-image-wrapper"}
         placeholderSrc={
           disabledEffect
-            ? `${ASSETS_API}/assets/transparent.png`
-            : `${ASSETS_API}/assets/placeholder.svg`
+            ? `${BASE_PATH_SITE}/assets/transparent.png`
+            : `${BASE_PATH_SITE}/assets/placeholder.svg`
         }
         //
         sx={{

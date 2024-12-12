@@ -37,7 +37,7 @@ import PostDetailsToolbar from "../post-details-toolbar";
 export default function PostDetailsView() {
   const params = useParams();
 
-  const { title } = params;
+  const title = params.title as string;
 
   const { post, postStatus, getPost } = useBlog();
 

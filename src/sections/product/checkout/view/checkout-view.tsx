@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 // @mui
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 // redux
 import { useDispatch } from "src/redux/store";
@@ -76,7 +76,7 @@ export default function CheckoutView() {
       </Typography>
 
       <Grid container justifyContent={completed ? "center" : "flex-start"}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <CheckoutSteps
             activeStep={activeStep}
             steps={PRODUCT_CHECKOUT_STEPS}

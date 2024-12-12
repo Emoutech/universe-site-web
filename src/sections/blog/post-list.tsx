@@ -1,7 +1,7 @@
 // @mui
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // types
 import { IPostItem } from "src/types/blog";
 // components
@@ -22,7 +22,7 @@ export default function PostList({ posts, loading, disabledIndex }: Props) {
   const renderSkeleton = (
     <>
       {[...Array(16)].map((_, index) => (
-        <Grid key={index} xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
           <PostItemSkeleton />
         </Grid>
       ))}
@@ -33,10 +33,8 @@ export default function PostList({ posts, loading, disabledIndex }: Props) {
     <>
       {posts.map((post, index) => (
         <Grid
+          size={{ xs: 12, sm: 6, md: !disabledIndex && index === 0 ? 6 : 3 }}
           key={post.id}
-          xs={12}
-          sm={6}
-          md={!disabledIndex && index === 0 ? 6 : 3}
         >
           <PostItem post={post} index={!disabledIndex ? index : undefined} />
         </Grid>

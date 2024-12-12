@@ -21,7 +21,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import IconButton from "@mui/material/IconButton";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
@@ -508,16 +508,12 @@ export default function HomeHugePackElements() {
         direction={{ xs: "column", md: "row-reverse" }}
         spacing={5}
       >
-        <Grid xs={12} md={5}>
-          {renderDescription}
-        </Grid>
+        <Grid size={{ xs: 12, md: 5 }}>{renderDescription}</Grid>
 
-        <Grid xs={12} md={7}>
-          {renderContent}
-        </Grid>
+        <Grid size={{ xs: 12, md: 7 }}>{renderContent}</Grid>
 
         {!mdUp && (
-          <Grid xs={12} sx={{ textAlign: "center" }}>
+          <Grid size={{ xs: 12 }} sx={{ textAlign: "center" }}>
             {viewAllBtn}
           </Grid>
         )}

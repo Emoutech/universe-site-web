@@ -1,10 +1,10 @@
 // sections
-import { CheckoutView } from 'src/sections/product/checkout/view';
+import { CheckoutView } from "src/sections/product/checkout/view";
 
 // ----------------------------------------------------------------------
 
 export const metadata = {
-  title: 'Checkout',
+  title: "Checkout",
 };
 
 export default function CheckoutPage() {

@@ -16,7 +16,7 @@ concurrency:
 
 env:
   NEXT_PUBLIC_BASE_PATH: /universe-site-web
-  NEXT_PUBLIC_URL_APPS: http://localhost:8082/universe-apps-web/
+  NEXT_PUBLIC_URL_APPS: https://emoutech.github.io/universe-apps-web/
 
 jobs:
   build:

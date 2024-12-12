@@ -1,7 +1,7 @@
 // @mui
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // types
 import { IProductCheckoutState } from "src/types/product";
 // _mock
@@ -34,7 +34,7 @@ export default function CheckoutBillingAddress({
   return (
     <>
       <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           {_addressBooks.slice(0, 4).map((address) => (
             <AddressItem
               key={address.id}
@@ -85,7 +85,7 @@ export default function CheckoutBillingAddress({
           </Stack>
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <CheckoutSummary
             total={checkout.total}
             subTotal={checkout.subTotal}

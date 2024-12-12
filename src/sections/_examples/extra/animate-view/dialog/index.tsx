@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 // @mui
 import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // hooks
 import { useBoolean } from "src/hooks/use-boolean";
 //
@@ -25,7 +25,7 @@ export default function DialogView() {
   return (
     <Card sx={{ p: 3 }}>
       <Grid container spacing={3}>
-        <Grid xs={12} md={9}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <ContainerView
             open={view.value}
             onOpen={view.onTrue}
@@ -33,7 +33,7 @@ export default function DialogView() {
             selectVariant={selectVariant}
           />
         </Grid>
-        <Grid xs={12} md={3}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <ControlPanel
             variantKey={variantKey}
             selectVariant={selectVariant}

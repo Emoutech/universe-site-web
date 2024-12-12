@@ -91,7 +91,7 @@ export default function JwtLoginView() {
 
         <Link
           component={RouterLink}
-          href={paths.auth.jwt.register}
+          href={paths.auth.register}
           variant="subtitle2"
         >
           Create an account

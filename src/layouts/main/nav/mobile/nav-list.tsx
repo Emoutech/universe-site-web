@@ -11,7 +11,7 @@ import { usePathname } from "src/routes/hook";
 //
 import { NavItemProps } from "../types";
 import NavItem from "./nav-item";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ export default function NavList({ item }: NavListProps) {
                     backgroundPosition: "center",
                     bgcolor: "background.neutral",
                     backgroundRepeat: "no-repeat",
-                    backgroundImage: `url(${ASSETS_API}/assets/illustrations/illustration_dashboard.png)`,
+                    backgroundImage: `url(${BASE_PATH_SITE}/assets/illustrations/illustration_dashboard.png)`,
                     [`& .${listItemTextClasses.root}`]: {
                       display: "none",
                     },

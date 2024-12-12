@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 // routes
 import { paths } from "src/routes/paths";
@@ -77,11 +77,11 @@ export default function TypographyView() {
 
       <Container sx={{ my: 10 }}>
         <Grid container rowSpacing={5}>
-          <Grid xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography variant="h6">Default Text</Typography>
           </Grid>
 
-          <Grid xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <Stack spacing={3}>
               {TYPOGRAPHYS.map((font) => (
                 <BlockVariant key={font.variant} font={font} />
@@ -89,11 +89,11 @@ export default function TypographyView() {
             </Stack>
           </Grid>
 
-          <Grid xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography variant="h6">Colors Text</Typography>
           </Grid>
 
-          <Grid xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <Stack spacing={3}>
               {["primary", "secondary", "disabled"].map((color) => (
                 <Paper

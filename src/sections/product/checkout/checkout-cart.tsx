@@ -2,7 +2,7 @@ import sum from "lodash/sum";
 // @mui
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 // routes
@@ -44,7 +44,7 @@ export default function CheckoutCart({
 
   return (
     <Grid container spacing={3}>
-      <Grid xs={12} md={8}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Card sx={{ mb: 3 }}>
           <CardHeader
             title={
@@ -85,7 +85,7 @@ export default function CheckoutCart({
         </Button>
       </Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid size={{ xs: 12, md: 4 }}>
         <CheckoutSummary
           enableDiscount
           total={total}

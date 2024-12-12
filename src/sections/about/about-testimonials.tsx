@@ -7,7 +7,7 @@ import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import ListItemText from "@mui/material/ListItemText";
 import Stack, { StackProps } from "@mui/material/Stack";
@@ -22,7 +22,7 @@ import { bgBlur, bgGradient, hideScroll } from "src/theme/css";
 // components
 import Iconify from "src/components/iconify";
 import { MotionViewport, varFade } from "src/components/animate";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -109,7 +109,7 @@ export default function AboutTestimonials() {
       sx={{
         ...bgGradient({
           color: alpha(theme.palette.grey[900], 0.9),
-          imgUrl: `${ASSETS_API}/assets/images/about/testimonials.jpg`,
+          imgUrl: `${BASE_PATH_SITE}/assets/images/about/testimonials.jpg`,
         }),
         overflow: "hidden",
         height: { md: 840 },
@@ -127,14 +127,10 @@ export default function AboutTestimonials() {
           justifyContent={{ xs: "center", md: "space-between" }}
           sx={{ height: 1 }}
         >
-          <Grid xs={10} md={4}>
-            {renderDescription}
-          </Grid>
+          <Grid size={{ xs: 10, md: 4 }}>{renderDescription}</Grid>
 
           <Grid
-            xs={12}
-            md={7}
-            lg={6}
+            size={{ xs: 12, md: 7, lg: 6 }}
             alignItems="center"
             sx={{
               height: 1,

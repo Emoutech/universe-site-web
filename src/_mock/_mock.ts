@@ -1,6 +1,6 @@
 import { sub } from "date-fns";
 // config
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_SITE } from "src/config-global";
 //
 import {
   _id,
@@ -66,16 +66,16 @@ export const _mock = {
   // Image
   image: {
     cover: (index: number) =>
-      `${ASSETS_API}/assets/images/cover/cover_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/cover/cover_${index + 1}.png`,
     avatar: (index: number) =>
-      `${ASSETS_API}/assets/images/avatar/avatar_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/avatar/avatar_${index + 1}.png`,
     travel: (index: number) =>
-      `${ASSETS_API}/assets/images/travel/travel_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/travel/travel_${index + 1}.png`,
     company: (index: number) =>
-      `${ASSETS_API}/assets/images/company/company_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/company/company_${index + 1}.png`,
     product: (index: number) =>
-      `${ASSETS_API}/assets/images/m_product/product_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/m_product/product_${index + 1}.png`,
     portrait: (index: number) =>
-      `${ASSETS_API}/assets/images/portrait/portrait_${index + 1}.png`,
+      `${BASE_PATH_SITE}/assets/images/portrait/portrait_${index + 1}.png`,
   },
 };

@@ -1,9 +1,7 @@
-import { memo } from 'react';
+import { memo } from "react";
 // @mui
-import { useTheme } from '@mui/material/styles';
-import Box, { BoxProps } from '@mui/material/Box';
-
-// ----------------------------------------------------------------------
+import { useTheme } from "@mui/material/styles";
+import Box, { BoxProps } from "@mui/material/Box";
 
 function SentIcon({ ...other }: BoxProps) {
   const theme = useTheme();
@@ -33,7 +31,7 @@ function SentIcon({ ...other }: BoxProps) {
       />
 
       <g
-        style={{ mixBlendMode: 'overlay' }}
+        style={{ mixBlendMode: "overlay" }}
         fill="#fff"
         fillOpacity="0.04"
         filter="url(#filter0_i_1870_134242)"

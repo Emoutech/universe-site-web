@@ -1,5 +1,5 @@
 // @mui
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 // types
 import { IUserAccountBillingHistory } from "src/types/user";
 import { IPaymentCard } from "src/types/payment";
@@ -30,8 +30,12 @@ export default function AccountBilling({
   addressBook,
 }: Props) {
   return (
-    <Grid container spacing={5} disableEqualOverflow>
-      <Grid xs={12} md={8}>
+    <Grid
+      container
+      spacing={5}
+      // disableEqualOverflow
+    >
+      <Grid size={{ xs: 12, md: 8 }}>
         <AccountBillingPlan
           plans={plans}
           cardList={cards}
@@ -43,7 +47,7 @@ export default function AccountBilling({
         <AccountBillingAddress addressBook={addressBook} />
       </Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid size={{ xs: 12, md: 4 }}>
         <AccountBillingHistory invoices={invoices} />
       </Grid>
     </Grid>
